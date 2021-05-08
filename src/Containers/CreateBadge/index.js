@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { storage } from '../../Firebase';
-import { ContainerLayout } from '../../Components';
+import { ContainerLayout, Image } from '../../Components';
 
 const CreateBadge = (props) => {
   const { match: { params: { id } }} = props;
@@ -16,7 +16,7 @@ const CreateBadge = (props) => {
   
   return(
     <ContainerLayout>
-      <img src={imageAsUrl} alt="badge" />
+      <Image src={imageAsUrl} alt="badge" />
     </ContainerLayout>
   );
 };
