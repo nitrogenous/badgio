@@ -1,12 +1,11 @@
-import { Header } from '../../Components';
+import { ContainerLayout } from '../../Components';
 
 const Landing = () => {
 
   return(
-    <div>
-      <Header />
+    <ContainerLayout>
       Landing
-    </div>
+    </ContainerLayout>
   );
 };
 
