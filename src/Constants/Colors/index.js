@@ -12,7 +12,7 @@ const header = {
 
 const logo = {
   font: palette.thimbleberry,
-}
+};
 
 const button = {
   primary: {
@@ -28,15 +28,23 @@ const button = {
 const form = {
   font: palette.milkGlass,
   background: palette.marineBlue,
-}
+};
 
 const fileUploader = {
   font: palette.marineBlue,
   background: palette.milkGlass,
   buttonFont: palette.milkGlass,
   buttonBackground: palette.thimbleberry,
-}
+};
 
-const colors = { palette, header, logo, button, form, fileUploader };
+const copyToClipboard = {
+  font: palette.milkGlass,
+  border: palette.marineBlue,
+  background: palette.marineBlue,
+  buttonFont: palette.milkGlass,
+  buttonBackground: palette.thimbleberry,
+};
+
+const colors = { palette, header, logo, button, form, fileUploader, copyToClipboard };
 
 export default colors;

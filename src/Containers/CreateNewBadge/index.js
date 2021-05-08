@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import short from 'short-uuid';
 import { storage } from '../../Firebase';
-import { ContainerLayout, Form, Button, FileUpload } from '../../Components';
+import { ContainerLayout, Form, Button, FileUpload, Image, CopyToClipboard } from '../../Components';
+import BadgioTemplate from '../../Assets/Images/badgio-template.png';
 
 const uuid = short.generate();
 
 const CreateNewBadge = () => {
   const [imageAsFile, setImageAsFile] = useState('');
   const [imageAsUrl, setImageAsUrl] = useState('');
+  const [badgeUrl, setBadgeUrl] = useState('');
   
   const handleImageAsFile= (event) => {
     const image = event.target.files[0];
@@ -15,7 +17,7 @@ const CreateNewBadge = () => {
     setImageAsFile(imageFile => (image));
   }
 
-  const handleFireBaseUpload = (event) => {
+  const handleFirebaseUpload = (event) => {
     event.preventDefault();
 
     if(imageAsFile === '') {
@@ -32,20 +34,30 @@ const CreateNewBadge = () => {
     }, () => {
       storage.ref(`badges/${uuid}/`).child(imageAsFile.name).getDownloadURL().then(fireBaseUrl => {
           setImageAsUrl(fireBaseUrl);
+          createBadgeUrl();          
         });
     });
   };
 
-  return (
-    <ContainerLayout>
-      <Form onSubmit={handleFireBaseUpload} title="Create New Badge" >
-        <FileUpload  
-          onChange={handleImageAsFile}
-        />
-        <Button primary>Create New Badge!</Button>
-      </Form>
+  const createBadgeUrl = () => {
+    const url = window.location.origin + '/create-badge/' + uuid; 
 
-      <img src={imageAsUrl} alt="badge" />
+    setBadgeUrl(url);
+  };
+
+  return (
+    <ContainerLayout horizontal centered >
+      <div>
+        <Form onSubmit={handleFirebaseUpload} title="Create New Badge" >
+          <FileUpload  
+            onChange={handleImageAsFile}
+          />
+          <Button primary>Create New Badge!</Button>
+        </Form>
+        {badgeUrl && <CopyToClipboard url={badgeUrl}/>} 
+      </div>
+
+      <Image src={imageAsUrl ? imageAsUrl : BadgioTemplate} alt="badge" />
     </ContainerLayout>
   );
 };

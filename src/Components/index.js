@@ -4,5 +4,7 @@ import Button from './Button';
 import ContainerLayout from './ContainerLayout';
 import Form from './Form';
 import FileUpload from './FileUpload';
+import Image from './Image';
+import CopyToClipboard from './CopyToClipboard';
 
-export { Logo, Header, Button, ContainerLayout, Form, FileUpload };
+export { Logo, Header, Button, ContainerLayout, Form, FileUpload, Image, CopyToClipboard };
