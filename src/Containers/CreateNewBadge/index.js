@@ -15,28 +15,30 @@ const CreateNewBadge = () => {
     setImageAsFile(imageFile => (image));
   }
 
-  const handleFireBaseUpload = e => {
-    e.preventDefault()
+  const handleFireBaseUpload = (event) => {
+    event.preventDefault();
 
     if(imageAsFile === '') {
       console.error(`not an image, the image file is a ${typeof(imageAsFile)}`);
       return;
     }
+
     const uploadTask = storage.ref(`/badges/${uuid}/${imageAsFile.name}`).put(imageAsFile);
 
     uploadTask.on('state_changed', (snapShot) => {
-      console.log(snapShot);
+      // console.log(snapShot);
     }, (err) => {
-      console.log(err);
+      // console.log(err);
     }, () => {
       storage.ref(`badges/${uuid}/`).child(imageAsFile.name).getDownloadURL().then(fireBaseUrl => {
-          setImageAsUrl(prevObject => ({...prevObject, imgUrl: fireBaseUrl}));
+          setImageAsUrl(fireBaseUrl);
         });
     });
   };
 
   return (
     <ContainerLayout>
+      {uuid}
       <Form onSubmit={handleFireBaseUpload} >
         <input 
           type="file" 
@@ -45,7 +47,7 @@ const CreateNewBadge = () => {
         <button>upload to firebase</button>
       </Form>
 
-      <img src={imageAsUrl?.imgUrl} alt="badge" />
+      <img src={imageAsUrl} alt="badge" />
     </ContainerLayout>
   );
 };
