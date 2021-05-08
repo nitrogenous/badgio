@@ -6,7 +6,7 @@ export const Wrapper = styled.button`
   outline: none;
   font-size: 14px;
   font-weight: bold;
-  padding: 7.5px 10px; 
+  padding: 10px 12.5px; 
   border-radius: 2.5px;
   transition: 0.2s ease;
   color: ${props => props.primary ? Colors.button.primary.font : Colors.button.secondary.font};
