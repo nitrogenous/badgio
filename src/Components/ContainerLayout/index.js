@@ -1,13 +1,14 @@
 import { Header } from '../index';
+import { Content } from './styled';
 
-const ContainerLayout = ({ children }) => {
+const ContainerLayout = ({ children, centered }) => {
   
   return (
     <div>
       <Header />
-      <div>
+      <Content centered={centered}>
         { children }
-      </div>
+      </Content>
     </div>
   );
 };

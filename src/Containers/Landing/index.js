@@ -3,7 +3,7 @@ import { ContainerLayout } from '../../Components';
 const Landing = () => {
 
   return(
-    <ContainerLayout>
+    <ContainerLayout centered>
       Landing
     </ContainerLayout>
   );

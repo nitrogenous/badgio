@@ -25,6 +25,18 @@ const button = {
   }
 };
 
-const colors = { palette, header, logo, button };
+const form = {
+  font: palette.milkGlass,
+  background: palette.marineBlue,
+}
+
+const fileUploader = {
+  font: palette.marineBlue,
+  background: palette.milkGlass,
+  buttonFont: palette.milkGlass,
+  buttonBackground: palette.thimbleberry,
+}
+
+const colors = { palette, header, logo, button, form, fileUploader };
 
 export default colors;

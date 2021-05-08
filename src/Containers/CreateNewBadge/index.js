@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import short from 'short-uuid';
 import { storage } from '../../Firebase';
-import { ContainerLayout, Form } from '../../Components';
+import { ContainerLayout, Form, Button, FileUpload } from '../../Components';
 
 const uuid = short.generate();
 
@@ -38,13 +38,11 @@ const CreateNewBadge = () => {
 
   return (
     <ContainerLayout>
-      {uuid}
-      <Form onSubmit={handleFireBaseUpload} >
-        <input 
-          type="file" 
+      <Form onSubmit={handleFireBaseUpload} title="Create New Badge" >
+        <FileUpload  
           onChange={handleImageAsFile}
         />
-        <button>upload to firebase</button>
+        <Button primary>Create New Badge!</Button>
       </Form>
 
       <img src={imageAsUrl} alt="badge" />

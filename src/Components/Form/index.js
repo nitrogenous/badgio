@@ -1,9 +1,15 @@
-const Form = ({ children, onSubmit }) => {
+import { Wrapper, Content, Title } from './styled';
+
+const Form = (props) => {
+  const { title, children, onSubmit, onChange } = props;
 
   return (
-    <form onSubmit={onSubmit}>
-      {children}
-    </form>
+    <Wrapper>
+      <Title>{title}</Title>
+      <Content onSubmit={onSubmit} onChange={onChange}>
+        {children}
+      </Content>
+    </Wrapper>
   );
 };
 
