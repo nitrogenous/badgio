@@ -28,18 +28,20 @@ const BadgeCreatorProvider = ({ children }) => {
 
   const createBadge = (userDetails) => {
     const canvas = canvasRef.current;
-    const context = canvas.getContext('2d')
-    let imageObj = new Image();
-    imageObj.src = canvasImage; 
-    imageObj.onload = () => {
-      context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
-      createContextTexts(context, userDetails);
-    };
+    if (canvas) {
+      const context = canvas.getContext('2d')
+      let imageObj = new Image();
+      imageObj.src = canvasImage; 
+      imageObj.onload = () => {
+        context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
+        createContextTexts(context, userDetails);
+      };
+    }
   };
 
   useEffect(() => {
       createBadge({});
-  },);
+  });
 
   return <Provider value={{canvasRef, setCanvasImage, createBadge}}>{children}</Provider>;
 };

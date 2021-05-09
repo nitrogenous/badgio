@@ -1,10 +1,11 @@
 import firebase from 'firebase/app';
-import config from './config';
 import 'firebase/analytics';
 import 'firebase/storage';
 
+const { REACT_APP_FIREBASE_CONF } = process.env;
+
 // Initialize Firebase
-firebase.initializeApp(config);
+firebase.initializeApp(JSON.parse(REACT_APP_FIREBASE_CONF));
 firebase.analytics();
 
 const storage = firebase.storage();
