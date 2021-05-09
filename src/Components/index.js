@@ -6,5 +6,18 @@ import Form from './Form';
 import FileUpload from './FileUpload';
 import Image from './Image';
 import CopyToClipboard from './CopyToClipboard';
+import Canvas from './Canvas';
+import Input from './Input';
 
-export { Logo, Header, Button, ContainerLayout, Form, FileUpload, Image, CopyToClipboard };
+export { 
+  Logo, 
+  Header, 
+  Button, 
+  ContainerLayout, 
+  Form, 
+  FileUpload, 
+  Image, 
+  CopyToClipboard,
+  Canvas,
+  Input
+};
