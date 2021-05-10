@@ -19,9 +19,9 @@ const BadgeCreatorProvider = ({ children }) => {
     context.fillStyle = '#76748A';
     context.fillText(capitalizeText(userDetails?.name || ''), 100 * 2, 642 * 2);
     context.font = "32pt Lekton";
-    context.fillText(userDetails?.company || '', 100 * 2, 680 * 2);
+    context.fillText(userDetails?.title || '', 100 * 2, 680 * 2);
     context.font = "bold 32pt Lekton";
-    context.fillText(userDetails?.title || '', 100 * 2, 705 * 2);
+    context.fillText(userDetails?.company || '', 100 * 2, 705 * 2);
     // context.font = "bold 22pt Lekton";
     // context.fillText('badgio.net', 100, 785);
   };
