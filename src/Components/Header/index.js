@@ -12,7 +12,7 @@ const Header = () => {
   return(
     <Wrapper>
       <Logo />
-      <Button primary onClick={handleClick}>Create Badge!</Button>
+      <Button primary onClick={handleClick}>Create New Event!</Button>
     </Wrapper>
   );
 };
