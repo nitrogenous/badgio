@@ -4,7 +4,6 @@ import { Colors } from '../../Constants';
 export const Wrapper = styled.div`
   width: 400px;
   display: flex;
-  margin: 0 25px;
   border-radius: 5px;
   flex-direction: column;
   color: ${Colors.form.font};

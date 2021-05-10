@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { Colors } from '../../Constants/';
 
 export const Wrapper = styled.button` 
-  border: none;
+  border: 3px solid transparent;
   outline: none;
   font-size: 14px;
   font-weight: bold;
@@ -15,6 +15,7 @@ export const Wrapper = styled.button`
 
   &:hover {
     cursor: pointer;
-    box-shadow: 0px 0px 4px 2px  ${props => props.primary ? Colors.button.primary.background : Colors.button.secondary.background};
+    border: 3px solid ${props => props.primary ? Colors.button.primary.background : Colors.button.secondary.background};
+    background: ${props => props.primary ? Colors.button.secondary.background : Colors.button.primary.background};
   }
 `;

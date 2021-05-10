@@ -2,7 +2,7 @@ import { useState } from 'react';
 import short from 'short-uuid';
 import { storage } from '../../Firebase';
 import { ContainerLayout, Form, Button, FileUpload, Image, CopyToClipboard } from '../../Components';
-import BadgioTemplate from '../../Assets/Images/badgio-template.png';
+import BadgioTemplate from '../../Assets/Images/Badges/badgio-template.png';
 
 const uuid = short.generate();
 
@@ -48,11 +48,11 @@ const CreateNewBadge = () => {
   return (
     <ContainerLayout horizontal centered >
       <div>
-        <Form onSubmit={handleFirebaseUpload} title="Create New Badge" >
+        <Form onSubmit={handleFirebaseUpload} title="Create A New Event Badge!" >
           <FileUpload  
             onChange={handleImageAsFile}
           />
-          <Button primary>Create New Badge!</Button>
+          <Button primary>Upload & Create</Button>
         </Form>
         {badgeUrl && <CopyToClipboard url={badgeUrl}/>} 
       </div>

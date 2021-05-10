@@ -1,9 +1,9 @@
 import { Img } from './styled'; 
 
-const Image = ({ src, alt }) => {
+const Image = ({ src, alt, width = '440pxx' }) => {
 
   return(
-    <Img src={src} alt={alt} />
+    <Img src={src} alt={alt} width={width} />
   );
 };
 
