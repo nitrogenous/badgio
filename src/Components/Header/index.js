@@ -5,6 +5,10 @@ import { Button, Logo } from '../index';
 const Header = () => {
   const history = useHistory();  
 
+  const redirectToGuide = () => {
+    history.push('/guide');
+  };
+
   const handleClick = () => {
     history.push('/create-new-badge');
   };
@@ -12,7 +16,10 @@ const Header = () => {
   return(
     <Wrapper>
       <Logo />
-      <Button primary onClick={handleClick}>Create New Event!</Button>
+      <div>
+        <Button primary onClick={redirectToGuide}>Guide</Button>
+        <Button primary onClick={handleClick}>Create New Event!</Button>
+      </div>
     </Wrapper>
   );
 };

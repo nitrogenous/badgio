@@ -8,6 +8,7 @@ import Image from './Image';
 import CopyToClipboard from './CopyToClipboard';
 import Canvas from './Canvas';
 import Input from './Input';
+import Block from './Block';
 
 export { 
   Logo, 
@@ -19,5 +20,6 @@ export {
   Image, 
   CopyToClipboard,
   Canvas,
-  Input
+  Input,
+  Block
 };

@@ -6,7 +6,6 @@ import BadgeGroup from '../../Assets/Images/Landing/badge-group.svg';
 const Landing = () => {
   const history = useHistory();  
 
-
   const handleClick = () => {
     history.push('/create-new-badge');
   };
