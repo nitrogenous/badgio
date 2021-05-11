@@ -11,4 +11,8 @@ export const Wrapper = styled.div`
   color: ${Colors.header.font};
   justify-content: space-around;
   background: ${Colors.header.background};
+
+  button {
+    margin: 7.5px;
+  }
 `;

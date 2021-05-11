@@ -9,7 +9,7 @@ export const Wrapper = styled.button`
   padding: 10px 12.5px; 
   border-radius: 2.5px;
   transition: 0.2s ease;
-  margin: 5px;
+  margin: 5px 0px;
   color: ${props => props.primary ? Colors.button.primary.font : Colors.button.secondary.font};
   background: ${props => props.primary ? Colors.button.primary.background : Colors.button.secondary.background};
 
