@@ -1,25 +1,14 @@
-import { useHistory } from 'react-router-dom';
 import { Wrapper } from './styled';
-import { Button, Logo } from '../index';
+import { Button, Logo, Block } from '../index';
 
 const Header = () => {
-  const history = useHistory();  
-
-  const redirectToGuide = () => {
-    history.push('/guide');
-  };
-
-  const handleClick = () => {
-    history.push('/create-new-badge');
-  };
-
   return(
     <Wrapper>
       <Logo />
-      <div>
-        <Button primary onClick={redirectToGuide}>Guide</Button>
-        <Button primary onClick={handleClick}>Create New Event!</Button>
-      </div>
+      <Block>
+        <Button primary redirectTo='/guide'>Guide</Button>
+        <Button primary redirectTo='/create-new-badge'>Create New Event!</Button>
+      </Block>
     </Wrapper>
   );
 };
