@@ -28,17 +28,17 @@ const CreateBadge = (props) => {
     createBadge(userDetails);
   };
 
-  const handleDownloadBadge = () => {
-    const canvas = canvasRef.current;
-    const image = new Image();
-    const win = window.open("about:blank", "badgio.net");
-    // image.crossOrigin = "anonymous";
+  // const handleDownloadBadge = () => {
+  //   const canvas = canvasRef.current;
+  //   const image = new Image();
+  //   const win = window.open("about:blank", "badgio.net");
+  //   image.crossOrigin = "anonymous";
       
-    image.src = canvas.toDataURL('png');
+  //   image.src = canvas.toDataURL('png');
     
-    win.document.write(image.outerHTML);
-    win.document.close();
-  };
+  //   win.document.write(image.outerHTML);
+  //   win.document.close();
+  // };
 
   return(
     <ContainerLayout horizontal centered>
