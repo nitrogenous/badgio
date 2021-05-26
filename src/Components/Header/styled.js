@@ -15,4 +15,12 @@ export const Wrapper = styled.div`
   button {
     margin: 7.5px;
   }
+
+  @media (max-width: 768px) {
+    padding: 15px 5px !important;
+    
+    div {
+      margin: 0 !important;
+    }
+  }
 `;

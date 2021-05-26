@@ -18,4 +18,9 @@ export const Wrapper = styled.button`
     border: 3px solid ${props => props.primary ? Colors.button.primary.background : Colors.button.secondary.background};
     background: ${props => props.primary ? Colors.button.secondary.background : Colors.button.primary.background};
   }
+
+  @media (max-width: 768px) {
+    font-size: 3.5vw;
+    padding: 7.5px 10px
+  }
 `;
