@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { Wrapper, Input } from './styled';
 
 const FileUpload = ({ onChange }) => {
-  const [inputText, setInputText] = useState('Select A Badge!');
+  const [inputText, setInputText] = useState('Upload Badge!');
 
   const handleChange = (event) => {
-    setInputText(event?.target?.files?.[0]?.name || 'Select A Badge!');
+    setInputText(event?.target?.files?.[0]?.name || 'Upload Badge!');
 
     onChange(event);
   };

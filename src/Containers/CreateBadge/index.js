@@ -47,7 +47,7 @@ const CreateBadge = (props) => {
           <Input name="name" placeholder="Name" />
           <Input name="title" placeholder="Title" />
           <Input name="company" placeholder="Company" />
-          <Button primary>Create Your Badge!</Button>
+          <Button primary>Create Your Personal Badge!</Button>
         </Form>
         <Button onClick={handleDownloadBadge}>Download Your Badge!</Button>
       </FormWrapper>
