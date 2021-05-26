@@ -32,7 +32,7 @@ const CreateBadge = (props) => {
     const canvas = canvasRef.current;
     const image = new Image();
     const win = window.open("about:blank", "badgio.net");
-    image.crossOrigin = "anonymous";
+    // image.crossOrigin = "anonymous";
       
     image.src = canvas.toDataURL('png');
     
@@ -49,7 +49,7 @@ const CreateBadge = (props) => {
           <Input name="company" placeholder="Company" />
           <Button primary>Create Your Personal Badge!</Button>
         </Form>
-        <Button onClick={handleDownloadBadge}>Download Your Badge!</Button>
+        {/* <Button onClick={handleDownloadBadge}>Download Your Badge!</Button> */}
       </FormWrapper>
       <Canvas canvasRef={canvasRef} width='1080' height="1920" crossOrigin='Anonymous'></Canvas>
     </ContainerLayout>
