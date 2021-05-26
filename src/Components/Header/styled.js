@@ -11,8 +11,17 @@ export const Wrapper = styled.div`
   color: ${Colors.header.font};
   justify-content: space-around;
   background: ${Colors.header.background};
+  z-index: 99;
 
   button {
     margin: 7.5px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 15px 5px !important;
+    
+    div {
+      margin: 0 !important;
+    }
   }
 `;

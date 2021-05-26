@@ -7,7 +7,7 @@ const Header = () => {
       <Logo />
       <Block>
         <Button primary redirectTo='/guide'>Guide</Button>
-        <Button primary redirectTo='/create-new-badge'>Create New Event!</Button>
+        <Button primary redirectTo='/create-new-badge'>Create New Badge!</Button>
       </Block>
     </Wrapper>
   );

@@ -9,7 +9,11 @@ export const Wrapper = styled.div`
   color: ${Colors.form.font};
   padding: 15px 20px 10px 20px;
   justify-content: space-around;
-  background: ${Colors.form.background}
+  background: ${Colors.form.background};
+
+  @media (max-width: 768px) {
+    width: auto !important;
+  }
 `;
 
 
