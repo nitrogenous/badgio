@@ -31,12 +31,12 @@ const BadgeCreatorProvider = ({ children }) => {
     if (canvas) {
       const context = canvas.getContext('2d')
       let imageObj = new Image();
-      imageObj.src = canvasImage; 
-      imageObj.crossOrigin = 'anonymous';
       imageObj.onload = () => {
         context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
         createContextTexts(context, userDetails);
       };
+      imageObj.crossOrigin = 'anonymous';
+      imageObj.src = canvasImage; 
     }
   };
 
