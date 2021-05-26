@@ -6,6 +6,10 @@ export const Content = styled.div`
   flex-direction: ${({horizontal}) => horizontal ? 'row' : 'column'};
   align-items: ${({ centered }) => centered ? 'center' : 'flex-start'};
   ${({centered, horizontal}) => centered && horizontal && `justify-content: center;`};
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
 export const BackgroundWaves = styled.img`
