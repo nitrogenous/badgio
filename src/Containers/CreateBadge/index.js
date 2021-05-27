@@ -28,17 +28,16 @@ const CreateBadge = (props) => {
     createBadge(userDetails);
   };
 
-  // const handleDownloadBadge = () => {
-  //   const canvas = canvasRef.current;
-  //   const image = new Image();
-  //   const win = window.open("about:blank", "badgio.net");
-  //   image.crossOrigin = "anonymous";
+  const handleDownloadBadge = () => {
+    const image = new Image();
+    const base64OfBadge = localStorage.getItem('saved-badge');
       
-  //   image.src = canvas.toDataURL('png');
+    image.src = base64OfBadge;
     
-  //   win.document.write(image.outerHTML);
-  //   win.document.close();
-  // };
+    const win = window.open("about:blank", "badgio.net");
+    win.document.write(image.outerHTML);
+    win.document.close();
+  };
 
   return(
     <ContainerLayout horizontal centered>
@@ -49,7 +48,7 @@ const CreateBadge = (props) => {
           <Input name="company" placeholder="Company" />
           <Button primary>Create Your Personal Badge!</Button>
         </Form>
-        {/* <Button onClick={handleDownloadBadge}>Download Your Badge!</Button> */}
+        <Button onClick={handleDownloadBadge}>Download Your Badge!</Button>
       </FormWrapper>
       <Canvas canvasRef={canvasRef} width='1080' height="1920" crossOrigin='Anonymous'></Canvas>
     </ContainerLayout>

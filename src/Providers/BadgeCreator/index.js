@@ -29,13 +29,22 @@ const BadgeCreatorProvider = ({ children }) => {
   const createBadge = (userDetails) => {
     const canvas = canvasRef.current;
     if (canvas) {
-      const context = canvas.getContext('2d')
+      const context = canvas.getContext('2d');
       let imageObj = new Image();
+
+      imageObj.crossOrigin = 'anonymous';
       imageObj.onload = () => {
         context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
+       
+        try {
+          localStorage.setItem("saved-badge", canvas.toDataURL("image/png"));
+        }
+        catch(err) {
+          console.log("Error: " + err);
+        }
+
         createContextTexts(context, userDetails);
       };
-      // imageObj.crossOrigin = 'anonymous';
       imageObj.src = canvasImage; 
     }
   };
