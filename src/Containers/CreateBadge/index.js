@@ -46,7 +46,7 @@ const CreateBadge = (props) => {
     <ContainerLayout horizontal centered>
       <FormWrapper>
         <Form onSubmit={handleOnSubmit}  title="Create Your Badge!">
-          <Input name="name" placeholder="Name" />
+          <Input name="name" placeholder="Name Surname" />
           <Input name="title" placeholder="Title" />
           <Input name="company" placeholder="Company" />
           <Button primary>Create Your Personal Badge!</Button>
