@@ -22,8 +22,9 @@ const BadgeCreatorProvider = ({ children }) => {
     context.fillText(userDetails?.title || '', 100 * 2, 680 * 2);
     context.font = "bold 32pt Lekton";
     context.fillText(userDetails?.company || '', 100 * 2, 705 * 2);
-    // context.font = "bold 22pt Lekton";
-    // context.fillText('badgio.net', 100, 785);
+    context.font = "bold 42pt Lekton";
+    context.fillStyle = '#E44652';
+    context.fillText('badgio.net', 399, 1815);
   };
 
   const createBadge = (userDetails) => {
@@ -35,16 +36,9 @@ const BadgeCreatorProvider = ({ children }) => {
       imageObj.crossOrigin = 'anonymous';
       imageObj.onload = () => {
         context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
-       
-        try {
-          localStorage.setItem("saved-badge", canvas.toDataURL("image/png"));
-        }
-        catch(err) {
-          console.log("Error: " + err);
-        }
-
         createContextTexts(context, userDetails);
       };
+
       imageObj.src = canvasImage; 
     }
   };

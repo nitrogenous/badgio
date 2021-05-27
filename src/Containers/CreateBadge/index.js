@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext, useEffect, useRef } from 'react';
 import { storage } from '../../Firebase';
 import { BadgeCreatorContext } from '../../Providers/BadgeCreator';
 import { ContainerLayout, Form, Button, Canvas, Input } from '../../Components';
@@ -7,6 +7,7 @@ import { FormWrapper } from './styled.js';
 const CreateBadge = (props) => {
   const { match: { params: { id } }} = props;
   const { createBadge, canvasRef, setCanvasImage } = useContext(BadgeCreatorContext);
+  const badgeImage = useRef();
 
   useEffect(() => {
     storage.ref(`badges/${id}/`).listAll().then(res => {
@@ -29,12 +30,14 @@ const CreateBadge = (props) => {
   };
 
   const handleDownloadBadge = () => {
+    const canvas = canvasRef.current;
     const image = new Image();
-    const base64OfBadge = localStorage.getItem('saved-badge');
-      
-    image.src = base64OfBadge;
+    const win = window.open("about:blank", "Badgio");
     
-    const win = window.open("about:blank", "badgio.net");
+    image.crossOrigin = 'anonymous';
+
+    image.src = canvas.toDataURL("image/png");
+    
     win.document.write(image.outerHTML);
     win.document.close();
   };
@@ -51,6 +54,7 @@ const CreateBadge = (props) => {
         <Button onClick={handleDownloadBadge}>Download Your Badge!</Button>
       </FormWrapper>
       <Canvas canvasRef={canvasRef} width='1080' height="1920" crossOrigin='Anonymous'></Canvas>
+      <span ref={badgeImage} width='330'></span>
     </ContainerLayout>
   );
 };
