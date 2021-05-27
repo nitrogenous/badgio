@@ -22,20 +22,23 @@ const BadgeCreatorProvider = ({ children }) => {
     context.fillText(userDetails?.title || '', 100 * 2, 680 * 2);
     context.font = "bold 32pt Lekton";
     context.fillText(userDetails?.company || '', 100 * 2, 705 * 2);
-    // context.font = "bold 22pt Lekton";
-    // context.fillText('badgio.net', 100, 785);
+    context.font = "bold 42pt Lekton";
+    context.fillStyle = '#E44652';
+    context.fillText('badgio.net', 399, 1815);
   };
 
   const createBadge = (userDetails) => {
     const canvas = canvasRef.current;
     if (canvas) {
-      const context = canvas.getContext('2d')
+      const context = canvas.getContext('2d');
       let imageObj = new Image();
+
+      imageObj.crossOrigin = 'anonymous';
       imageObj.onload = () => {
         context.drawImage(imageObj, 0, 0, imageObj.width, imageObj.height);
         createContextTexts(context, userDetails);
       };
-      // imageObj.crossOrigin = 'anonymous';
+
       imageObj.src = canvasImage; 
     }
   };
