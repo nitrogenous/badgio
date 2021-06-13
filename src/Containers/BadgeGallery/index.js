@@ -1,3 +1,4 @@
+import { GalleryWrapper, Title } from './styled';
 import { ContainerLayout, Card } from '../../Components';
 import { galleryItems } from './staticData';
 
@@ -11,7 +12,10 @@ const BadgeGallery = () => {
 
   return(
     <ContainerLayout centered>
-      {createCards()}
+      <Title>Badge Gallery</Title>
+      <GalleryWrapper>
+        {createCards()}
+      </GalleryWrapper>
     </ContainerLayout>
   );
 };

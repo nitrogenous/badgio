@@ -33,7 +33,7 @@ export const Content = styled.div`
   button {
     font-size: 18px;
     margin-top: 25px;
-    margin-left: 10em;
+    margin-left: 1em;
     padding: 15px 25px;
   }
 
@@ -50,7 +50,7 @@ export const Content = styled.div`
     }
 
     button {
-      margin-left: 0;
+      margin-left: 1em;
     }
   }
 `;
