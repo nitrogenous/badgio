@@ -4,6 +4,7 @@ import CreateNewBadge from './Containers/CreateNewBadge';
 import CreateBadge from './Containers/CreateBadge';
 import Landing from './Containers/Landing';
 import Guide from './Containers/Guide';
+import BadgeGallery from './Containers/BadgeGallery';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/create-new-badge" component={CreateNewBadge} />
           <Route exact path="/create-badge/:id" component={CreateBadge} />
           <Route exact path="/guide" component={Guide}/>
+          <Route exact path="/badge-gallery" component={BadgeGallery} />
           <Route path="/" component={Landing} />
         </Switch>
       </Router>

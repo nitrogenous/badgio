@@ -9,6 +9,7 @@ import CopyToClipboard from './CopyToClipboard';
 import Canvas from './Canvas';
 import Input from './Input';
 import Block from './Block';
+import Card from './Card';
 
 export { 
   Logo, 
@@ -21,5 +22,6 @@ export {
   CopyToClipboard,
   Canvas,
   Input,
-  Block
+  Block,
+  Card
 };
