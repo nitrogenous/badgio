@@ -1,27 +1,22 @@
-import styled from 'styled-components';
-import { Colors } from '../../Constants/';
+import styled from "styled-components";
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 50px;
+  height: 77px;
   display: flex;
   position: fixed;
-  padding: 15px 50px;
   align-items: center;
-  color: ${Colors.header.font};
+  color: #f7f8f3;
   justify-content: space-around;
-  background: ${Colors.header.background};
+  background: #f15f79;
   z-index: 99;
 
-  button {
-    margin: 7.5px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 15px 5px !important;
-    
-    div {
-      margin: 0 !important;
-    }
+  span {
+    font-size: 60px;
+    font-weight: 300;
+    display: inline-block;
+    font-size: 80px;
+    line-height: 60px;
+    height: 77px;
   }
 `;

@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const ContentWrapper = styled.div`
   display: flex;
-  height: 65vh;
+  ${"" /* height: 65vh; */}
   justify-content: center;
 
   @media (max-width: 768px) {
@@ -18,16 +18,31 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  width: 50%;
   display: flex;
-  margin-left: 75px;
+  margin-left: 25px;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
 
   span {
-    color: #043353;
-    font-size: 64px;
+    color: #f7f8f3;
+    font-size: 86px;
+
+    b {
+      color: #f15f79;
+    }
+
+    a {
+      background: #f15f79;
+      padding: 2.5px 5px;
+
+      &:after {
+        left: 7.5px;
+        width: 90%;
+        opacity: 1;
+        background: #f7f8f3;
+      }
+    }
   }
 
   button {

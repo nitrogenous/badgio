@@ -1,14 +1,13 @@
-import { Wrapper } from './styled';
-import { Button, Logo, Block } from '../index';
+import { Wrapper } from "./styled";
+import { Link } from "../index";
 
 const Header = () => {
-  return(
+  return (
     <Wrapper>
-      <Logo />
-      <Block>
-        <Button primary redirectTo='/guide'>Guide</Button>
-        <Button primary redirectTo='/create-new-badge'>Create New Badge!</Button>
-      </Block>
+      <span>badgio</span>
+      <Link href="#">
+        <span>create</span>
+      </Link>
     </Wrapper>
   );
 };
